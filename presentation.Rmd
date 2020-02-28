@@ -1,12 +1,15 @@
 ---
-
 title: "Focused Workflow to Share Reproducible Analysis"
 author: "Hussain Alsalman"
 date: "2/26/2020"
 output:
   revealjs::revealjs_presentation:
+    self_contained: false
+    reveal_options:
+      slideNumber: true
     theme: sky
     css: "css/my_css.css"
+    reveal_plugins: ["notes"]
 ---
 
 ```{r setup, include=FALSE}
@@ -25,6 +28,9 @@ But wait for the real deal
 
 Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis while making it reproducible. In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
 
+<aside class="notes">
+Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+</aside>
 
 ## Building Credibility
 
