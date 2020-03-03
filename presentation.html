@@ -444,6 +444,10 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <script src="presentation_files/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+    <script src="presentation_files/viz-1.8.2/viz.js"></script>
+    <link href="presentation_files/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="presentation_files/grViz-binding-1.0.5/grViz.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -455,18 +459,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h3 class="date">2/26/2020</h3>
 </section>
 
-<section id="first-draft" class="slide level2">
-<h2>First Draft</h2>
-<ul>
-<li>hello</li>
-<li>then hello again</li>
-<li>then hello thrid time</li>
-</ul>
-<p>But wait for the real deal</p>
-</section>
-<section id="greetings" class="slide level2">
-<h2>Greetings</h2>
-<p>Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis while making it reproducible. In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility</p>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<div id="htmlwidget-7d4497e2fc268c8a8864" style="width:768px;height:576px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7d4497e2fc268c8a8864">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot, rankdir = LR]\nnode [shape = rectangle]\nnode [fillcolor = red]\n1\n\n1 -> 2 -> 3\n\n\n1 [label = \"Reproducibility\"]\n2 [label = \"Analysis\"]\n3 [label = \"Shareability\"]\n\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility</p>
 <aside class="notes">
 Oh hey, these are some notes. They’ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
 </aside>
@@ -477,7 +474,7 @@ Oh hey, these are some notes. They’ll be hidden in your presentation, but you 
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
-<p>Before we talk about analysis shareability and reproducibility , I want to share with you a personal story that motivated this talk and the workflow I adopted.</p>
+<p>Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted.</p>
 <p>I am very passionate about data science so I started writing blogs since 2016. I mainly talked about data wrangling and data acquisition and basicaly share everything new I learn about this field. What I found that technical blogging is different than blogging about any other topics.</p>
 <p>because you usually start with the code and explore many options and try different approaches until you are satisfied with the results then you try to communicate your result in cohesive narrative that is now lost because so many missing interlinked thoughts you had during coding session that you did not document or capture right away.</p>
 </section>

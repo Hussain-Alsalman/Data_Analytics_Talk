@@ -16,17 +16,30 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## First Draft
 
-- hello 
-- then hello again 
-- then hello thrid time
+## Introduction
 
-But wait for the real deal 
+```{r DiagrammR, echo=FALSE, warnings=FALSE}
+library("DiagrammeR")
+DiagrammeR::grViz("digraph {
+  
+graph[layout = dot, rankdir = LR]
+node [shape = rectangle]
+node [fillcolor = red]
+1
 
-## Greetings
+1 -> 2 -> 3
 
-Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis while making it reproducible. In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
+
+1 [label = 'Reproducibility']
+2 [label = 'Analysis']
+3 [label = 'Shareability']
+
+
+}")
+```
+
+Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
 
 <aside class="notes">
 Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
@@ -41,7 +54,7 @@ Professionally, I work as a Planning & Performance Management Analyst at Saudi A
 
 
 
-Before we talk about analysis shareability and reproducibility , I want to share with you a personal story that motivated this talk and the workflow I adopted. 
+Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted. 
 
 I am very passionate about data science so I started writing blogs since 2016. I mainly talked about data wrangling and data acquisition and basicaly share everything new I learn about this field.  What I found that technical blogging is different than blogging about any other topics.
 
