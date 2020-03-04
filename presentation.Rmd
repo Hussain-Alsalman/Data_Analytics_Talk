@@ -17,24 +17,56 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Introduction
+## What is it?
 
-```{r DiagrammR, echo=FALSE, warnings=FALSE}
+
+here is a little 
+
+
+
+
+
+This is the normal workflow
+
+
+```{r DiagrammR, echo=FALSE, warnings=FALSE, fig.align='center'}
 library("DiagrammeR")
 DiagrammeR::grViz("digraph {
   
-graph[layout = dot, rankdir = LR]
-node [shape = rectangle]
-node [fillcolor = red]
-1
+graph[rankdir = LR, bgcolor = transparent, size = '8,5']
+node [shape = circle, fillcolor = lightblue]
 
-1 -> 2 -> 3
+subgraph cluster_1 {
+  node [style=filled];
+  1 -> 2 -- cluster_3 
+  label = 'Data Analysis';
+  color=blue
+    subgraph cluster_3 {
+    node [style=filled];
+    3 -> 4 -> 5 ;
+    5 ->3
+    label = 'Exploration';
+    color=blue
+  }
+}
 
 
-1 [label = 'Reproducibility']
-2 [label = 'Analysis']
-3 [label = 'Shareability']
 
+subgraph cluster_2 {
+  node [style=filled];
+   cluster_1 -- 6 ;
+  label = 'Communication';
+  color=blue
+}
+
+ [label = 'Shareability']
+ [label = 'Reproducibility']
+1 [label = 'Data Acquisition']
+2 [label = 'Data Cleaning']
+3 [label = 'Transform']
+4 [label = 'Visualize']
+5 [label = 'Model']
+6 [label = 'Analysis Results']
 
 }")
 ```
