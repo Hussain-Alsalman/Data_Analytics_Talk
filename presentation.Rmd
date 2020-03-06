@@ -7,7 +7,7 @@ output:
     self_contained: false
     reveal_options:
       slideNumber: true
-    theme: sky
+    theme: solarized
     css: "css/my_css.css"
     reveal_plugins: ["notes"]
 ---
@@ -16,62 +16,131 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<aside class="notes">
+Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
+</aside>
 
-## What is it?
-
-
-here is a little 
-
-
+##{data-background="#f7f2d3"}
 
 
 
-This is the normal workflow
+Professionally, I work as a Planning & Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com. 
+
+## Motivation
+
+Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted. 
+
+I am very passionate about data science so in 2016 I started writing blogs about data wrangling and data acquisition and basicaly share everything new I learn about this field.  What I found that technical blogging is different than blogging about any other topics.
+
+Because you usually start with the data importing then cleaning. Then you start transofrming and wrangling the data and explore many options to proceed to modeling. When it comes to modeling you try different models until you are satisfied with the results. Finaly you try to communicate your result in cohesive narrative. But the thing is that big part of the analysis and insight was gained during this loop of trial and error that is now lost because you did not document or capture right away.
+
+plus now you have to worry about how are going to publish this results. For me, I was using Wordpress, so that meant that I have to export all the figures and charts I created and uploade them in specific order along with my narrative. 
+
+As you can see this is neither the best nor the most efficient workflow you can adopt. 
+
+However, I manged to keep doing that almost a year and half until this happen
+
+![](./images/broken_site.png)
 
 
-```{r DiagrammR, echo=FALSE, warnings=FALSE, fig.align='center'}
-library("DiagrammeR")
-DiagrammeR::grViz("digraph {
+
+- Global Motivtion
+
+## What is our objective
+
+making every step in this workflow reproducible and shareable 
+
+## What is Reproducible Analysis?
+## What is Sharepable?
+
+Characteristics of 
+
+## Documentation
+  - How? Why? 
   
-graph[rankdir = LR, bgcolor = transparent, size = '8,5']
-node [shape = circle, fillcolor = lightblue]
+## Always Replicable
+  - Same packages and all dependencies 
+  - Same envoirnment
+  
+## Capture Changes
+  - Every step along the way.
+  - Change of approach
 
-subgraph cluster_1 {
-  node [style=filled];
-  1 -> 2 -- cluster_3 
-  label = 'Data Analysis';
-  color=blue
-    subgraph cluster_3 {
-    node [style=filled];
-    3 -> 4 -> 5 ;
-    5 ->3
-    label = 'Exploration';
-    color=blue
+## Shareable 
+  - content fleixble 
+  - format flexible
+
+## Focused
+  - Netlify
+  - Hugo
+  
+
+## Tools to do
+
+1- Literate programming 
+  - Markdown
+  - Python or R
+2- Version Control 
+  - Git & Github 
+3- Website
+  - Hugo
+4- Continous Deployment
+  - Netlify
+  
+# Demo 
+
+## Data Aquisiton 
+  best practices
+  - Avoid downloading the data manually. You will almost definetly forget where you got it from and why?
+  - Also document why you choose the data you chose 
+
+
+```{r DiagrammR, echo=FALSE,message=FALSE, warnings=FALSE, fig.height=3}
+library("DiagrammeR")
+DiagrammeR::grViz("digraph neato {
+  graph [rankdir=LR,bgcolor=transparent,size='13,5', fontsize = 32, fontname = Helvetica, overlap = false];
+  node [shape=circle, fontsize = 32, fontname = Helvetica ];
+  label='Reproducible + Shareable';
+  
+  subgraph cluster1 {
+  label='Data Analysis';
+    subgraph cluster11 {
+    label='Exploration';
+    node [fillcolor=LightBlue];
+    c; d; e;
+    c -> d -> e;
+    e -> c;
+    }
+    a -> b;
+    b -> c;
   }
-}
 
+  subgraph cluster2 {
+    label='Communicating Results';
+    node [fillcolor=LimeGreen];
+    f; 
+    e -> f;
+  }
 
+  
 
-subgraph cluster_2 {
-  node [style=filled];
-   cluster_1 -- 6 ;
-  label = 'Communication';
-  color=blue
-}
-
- [label = 'Shareability']
- [label = 'Reproducibility']
-1 [label = 'Data Acquisition']
-2 [label = 'Data Cleaning']
-3 [label = 'Transform']
-4 [label = 'Visualize']
-5 [label = 'Model']
-6 [label = 'Analysis Results']
+  
+  edge [arrowsize=7 , arrowhead=vee]
+  a [ label = 'Data\nAcquisition'  ]
+  b [ label = 'Data\nCleaning' ]
+  c [ label = 'Transform' ]
+  d [ label = 'Visualize' ]
+  e [ label = 'Model'  ]
+  f [ label = 'Analysis\nResults' ]
 
 }")
 ```
 
-Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
+
+
+## Why do we care about Reproducibility 
+
+
 
 <aside class="notes">
 Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).

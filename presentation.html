@@ -12,7 +12,7 @@
 
 
 
-<link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/solarized.css" id="theme">
 
 
   <!-- some tweaks to reveal css -->
@@ -459,28 +459,89 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h3 class="date">2/26/2020</h3>
 </section>
 
-<section id="what-is-it" class="slide level2">
-<h2>What is it?</h2>
-<p>here is a little</p>
-<p>This is the normal workflow</p>
-<div id="htmlwidget-6851456dd5cea87238d0" style="width:768px;height:576px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6851456dd5cea87238d0">{"x":{"diagram":"digraph {\n  \ngraph[layout = dot, rankdir = LR, bgcolor = transparent]\nnode [shape = rectangle, fillcolor = blue]\n\n1 -> 2 -> 3\n\n\n1 [label = \"Reproducibility\"]\n2 [label = \"Analysis\"]\n3 [label = \"Shareability\"]\n\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p>Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility</p>
+<section class="slide level2">
+
 <aside class="notes">
-Oh hey, these are some notes. They’ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility
 </aside>
-</section>
-<section id="building-credibility" class="slide level2">
-<h2>Building Credibility</h2>
+<p>##{data-background=“#f7f2d3”}</p>
 <p>Professionally, I work as a Planning &amp; Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com.</p>
 </section>
 <section id="motivation" class="slide level2">
 <h2>Motivation</h2>
+<ul>
+<li>Personal Motivation</li>
+<li>Global Motivtion</li>
+</ul>
+</section>
+<section id="what-is-our-objective" class="slide level2">
+<h2>What is our objective</h2>
+<p>making every step in this workflow reproducible and shareable</p>
+</section>
+<section id="what-is-reproducible-analysis" class="slide level2">
+<h2>What is Reproducible Analysis?</h2>
+</section>
+<section id="what-is-sharepable" class="slide level2">
+<h2>What is Sharepable?</h2>
+<p>Characteristics of</p>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<ul>
+<li>How? Why?</li>
+</ul>
+</section>
+<section id="always-replicable" class="slide level2">
+<h2>Always Replicable</h2>
+<ul>
+<li>Same packages and all dependencies</li>
+<li>Same envoirnment</li>
+</ul>
+</section>
+<section id="capture-changes" class="slide level2">
+<h2>Capture Changes</h2>
+<ul>
+<li>Every step along the way.</li>
+<li>Change of approach</li>
+</ul>
+</section>
+<section id="shareable" class="slide level2">
+<h2>Shareable</h2>
+<ul>
+<li>content fleixble</li>
+<li>format flexible</li>
+</ul>
+</section>
+<section id="focused" class="slide level2">
+<h2>Focused</h2>
+<ul>
+<li>Netlify</li>
+<li>Hugo</li>
+</ul>
+</section>
+<section id="tools-to-do" class="slide level2">
+<h2>Tools to do</h2>
+<p>1- Literate programming - Markdown - Python or R 2- Version Control - Git &amp; Github 3- Website - Hugo 4- Continous Deployment - Netlify</p>
+</section>
+<section><section id="demo" class="title-slide slide level1"><h1>Demo</h1></section><section id="data-aquisiton" class="slide level2">
+<h2>Data Aquisiton</h2>
+<p>best practices - Avoid downloading the data manually. You will almost definetly forget where you got it from and why? - Also document why you choose the data you chose</p>
+<div id="htmlwidget-7967b64d4c6a157f1b70" style="width:768px;height:288px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7967b64d4c6a157f1b70">{"x":{"diagram":"digraph neato {\n  graph [rankdir=LR,bgcolor=transparent,size=\"13,5\", fontsize = 32, fontname = Helvetica, overlap = false];\n  node [shape=circle, fontsize = 32, fontname = Helvetica ];\n  label=\"Reproducible + Shareable\";\n  \n  subgraph cluster1 {\n  label=\"Data Analysis\";\n    subgraph cluster11 {\n    label=\"Exploration\";\n    node [fillcolor=LightBlue];\n    c; d; e;\n    c -> d -> e;\n    e -> c;\n    }\n    a -> b;\n    b -> c;\n  }\n\n  subgraph cluster2 {\n    label=\"Communicating Results\";\n    node [fillcolor=LimeGreen];\n    f; \n    e -> f;\n  }\n\n  \n\n  \n  edge [arrowsize=7 , arrowhead=vee]\n  a [ label = \"Data\nAcquisition\"  ]\n  b [ label = \"Data\nCleaning\" ]\n  c [ label = \"Transform\" ]\n  d [ label = \"Visualize\" ]\n  e [ label = \"Model\"  ]\n  f [ label = \"Analysis\nResults\" ]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</section><section id="why-do-we-care-about-reproducibility" class="slide level2">
+<h2>Why do we care about Reproducibility</h2>
+<aside class="notes">
+Oh hey, these are some notes. They’ll be hidden in your presentation, but you can see them if you open the speaker notes window (hit »S« on your keyboard).
+</aside>
+</section><section id="building-credibility" class="slide level2">
+<h2>Building Credibility</h2>
+<p>Professionally, I work as a Planning &amp; Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com.</p>
+</section><section id="motivation-1" class="slide level2">
+<h2>Motivation</h2>
 <p>Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted.</p>
 <p>I am very passionate about data science so I started writing blogs since 2016. I mainly talked about data wrangling and data acquisition and basicaly share everything new I learn about this field. What I found that technical blogging is different than blogging about any other topics.</p>
 <p>because you usually start with the code and explore many options and try different approaches until you are satisfied with the results then you try to communicate your result in cohesive narrative that is now lost because so many missing interlinked thoughts you had during coding session that you did not document or capture right away.</p>
-</section>
-<section id="elements" class="slide level2">
+</section><section id="elements" class="slide level2">
 <h2>elements</h2>
 <p>plus now you have to worry about how the final article or presenation is going to look like and you have to export all the figures and charts your code created and uploade them in specific order along with text.</p>
 <p>so I adopted this not so organized workflow for almost a year and half until this happen</p>
@@ -489,15 +550,13 @@ Oh hey, these are some notes. They’ll be hidden in your presentation, but you 
 <p>So I decided to look back at my code on my machine re-do everything from scratch again. but to my surprise the most if not all of my codes did not work this is because most of the packages I have used at the time has been updated. That made my analysis almost impossible to reproduce.</p>
 <p>In designing the work flow I put number of criteria to meet</p>
 <p>Reproducible: Clear instructions &amp; analysis &amp; Calculations Availability of Data Shareable : flexibility to convert analysis to any format (pdf, html, presentation, LaTex) Reliable : I want to share my work on a reliable server so I don’t lose everything overnight. I also needed and easy way to have a complete backup Collaborative : any one should be able to contribute and improve upon the work. I also</p>
-</section>
-<section id="what-makes-data-science-analysis-reproducible" class="slide level2">
+</section><section id="what-makes-data-science-analysis-reproducible" class="slide level2">
 <h2>What makes data science Analysis reproducible??</h2>
 <p>There are a lot of solutions commercial and non-commercial to achieve this fore example</p>
 <p>In the following slides we will try to proceed a process that enables you to</p>
-</section>
-<section id="still" class="slide level2">
+</section><section id="still" class="slide level2">
 <h2>still</h2>
-</section>
+</section></section>
     </div>
   </div>
 
