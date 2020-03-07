@@ -1,33 +1,45 @@
 ---
-title: "Focused Workflow to Share Reproducible Analysis"
-author: "Hussain Alsalman"
-date: "2/26/2020"
 output:
   revealjs::revealjs_presentation:
     self_contained: false
     reveal_options:
       slideNumber: true
-    theme: solarized
+    theme: black
     css: "css/my_css.css"
     reveal_plugins: ["notes"]
+    highlight: tango
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library("fontawesome")
 ```
+
+<section>
+
+</br><h1 class ='title'>Focused Workflow to Share Reproducible Analysis</h1>
+</br></br><h3  class= 'author'>`r fa("id-badge",fill = "white")`Hussain Alsalman</h3>
+<h5 class = 'subtitles'>`r fa("twitter",fill = "white")`@Arabian_Analyst</h5>
+<h5 class = 'subtitles'>`r fa("link",fill = "white")`https://ArabianAnalyst.com</h5>
+<h5 class = 'subtitles'>`r fa("calendar-day",fill = "white")``r Sys.Date()`</h5>
+</br>
 
 <aside class="notes">
 Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
-</aside>
-
-##{data-background="#f7f2d3"}
-
-
 
 Professionally, I work as a Planning & Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com. 
+</aside>
 
-## Motivation
+</section>
 
+## What is Reproducible Analysis?
+
+
+
+## Why do we care? 
+
+<aside class="notes">
 Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted. 
 
 I am very passionate about data science so in 2016 I started writing blogs about data wrangling and data acquisition and basicaly share everything new I learn about this field.  What I found that technical blogging is different than blogging about any other topics.
@@ -38,39 +50,85 @@ plus now you have to worry about how are going to publish this results. For me, 
 
 As you can see this is neither the best nor the most efficient workflow you can adopt. 
 
-However, I manged to keep doing that almost a year and half until this happen
+However, I manged to keep doing that for almost a year and half until that happen
 
-![](./images/broken_site.png)
+</aside>
+
+## { data-background-image="./images/broken_site.png"  background-size="contain"  background-repeat="no-repeat"   }
+
+## Reproducibility & Shareability in Business 
 
 
+>   - Reproducibility builds trust. 
+>   - Foster Learning envirnoment 
+>   - Faster to deploy
+>   - 
+  
 
-- Global Motivtion
+## What is our objective today?
 
-## What is our objective
+Making every step in this workflow reproducible and shareable 
 
-making every step in this workflow reproducible and shareable 
+```{r DiagrammR, echo=FALSE,message=FALSE, warnings=FALSE, fig.height=3}
+library("DiagrammeR")
+DiagrammeR::grViz("digraph neato {
+  graph [rankdir=LR,bgcolor=transparent,size='13,5', fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];
+  edge [arrowsize=4 , arrowhead=vee, color = white];
+  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =white, color = white];
+  label='Reproducible + Shareable';
+  subgraph cluster1 {
+  label='Data Analysis';
+    subgraph cluster11 {
+    label='Exploration';
 
-## What is Reproducible Analysis?
+    c -> d -> e;
+    e -> c;
+    }
+    a -> b;
+    b -> c;
+  }
+
+  subgraph cluster2 {
+    label='Communicating Results';
+    e -> f;
+  }
+
+  
+  a [ label = 'Data\nAcquisition'  ]
+  b [ label = 'Data\nCleaning' ]
+  c [ label = 'Transform' ]
+  d [ label = 'Visualize' ]
+  e [ label = 'Model'  ]
+  f [ label = 'Analysis\nResults' ]
+
+}")
+```
+
+Reproducible Analysis: 
+
 ## What is Sharepable?
 
-Characteristics of 
+##Characteristics of Reproducible & Shareable Analysis 
 
-## Documentation
+- Strong Documentation
   - How? Why? 
   
-## Always Replicable
+- Always Replicable
   - Same packages and all dependencies 
-  - Same envoirnment
+    - For python when in doubt use conda install instead of pip install
+    
+  - Same environment
+    - R & Python
   
-## Capture Changes
+- Capture Changes
   - Every step along the way.
   - Change of approach
 
-## Shareable 
-  - content fleixble 
-  - format flexible
+- Shareable 
+  - Content fleixble 
+  - Format flexible
 
-## Focused
+- Focused == Automation
   - Netlify
   - Hugo
   
@@ -80,10 +138,32 @@ Characteristics of
 1- Literate programming 
   - Markdown
   - Python or R
+  
+2- Envirnoment Control 
+  - Platform 
+  - Pakcage Dependencies 
+  
+-  Checkpoint package by Microsoft for R 
+
+```{r Checkpoint, eval=FALSE, echo=TRUE}
+library("checkpoint")
+checkpoint("YYYY-MM-DD") # e.g. "2014-09-17"
+```
+
+---
+
+Date of snapshot to use in YYYY-MM-DD format, e.g. "2014-09-17". Specify a date on or after "2014-09-17". MRAN takes one snapshot per day. To list all valid snapshot dates on MRAN use getValidSnapshots()
+
+
+  - `pip freez > requirments.txt` for Python 
+  
 2- Version Control 
-  - Git & Github 
-3- Website
-  - Hugo
+  - Git 
+
+3- Hosting Envirnoment
+  - Github
+  - Website Generator by Hugo
+  
 4- Continous Deployment
   - Netlify
   
@@ -95,46 +175,7 @@ Characteristics of
   - Also document why you choose the data you chose 
 
 
-```{r DiagrammR, echo=FALSE,message=FALSE, warnings=FALSE, fig.height=3}
-library("DiagrammeR")
-DiagrammeR::grViz("digraph neato {
-  graph [rankdir=LR,bgcolor=transparent,size='13,5', fontsize = 32, fontname = Helvetica, overlap = false];
-  node [shape=circle, fontsize = 32, fontname = Helvetica ];
-  label='Reproducible + Shareable';
-  
-  subgraph cluster1 {
-  label='Data Analysis';
-    subgraph cluster11 {
-    label='Exploration';
-    node [fillcolor=LightBlue];
-    c; d; e;
-    c -> d -> e;
-    e -> c;
-    }
-    a -> b;
-    b -> c;
-  }
 
-  subgraph cluster2 {
-    label='Communicating Results';
-    node [fillcolor=LimeGreen];
-    f; 
-    e -> f;
-  }
-
-  
-
-  
-  edge [arrowsize=7 , arrowhead=vee]
-  a [ label = 'Data\nAcquisition'  ]
-  b [ label = 'Data\nCleaning' ]
-  c [ label = 'Transform' ]
-  d [ label = 'Visualize' ]
-  e [ label = 'Model'  ]
-  f [ label = 'Analysis\nResults' ]
-
-}")
-```
 
 
 

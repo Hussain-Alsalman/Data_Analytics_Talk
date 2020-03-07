@@ -1,6 +1,4 @@
-
-
-  .reveal p {
+.reveal p {
     text-align: left;
   }
   .reveal ul {
@@ -10,15 +8,7 @@
     display: block;
   }
 
-h1.title {
-	padding-top: 10%;
-	padding-bottom: 10%;  
+h1.title, h3.author, h5.subtitles  {
 	text-align: left;
 }
 
-h2.author {
-	text-align: left;
-}
-h3.date { 
-	text-align: left;
-}
