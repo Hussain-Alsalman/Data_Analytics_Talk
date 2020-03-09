@@ -550,20 +550,17 @@ Hussain Alsalman
 <svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 448 512">
 <path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm64-192c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-96zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"/>
 </svg>
-2020-03-07
+2020-03-09
 </h5>
 <p></br></p>
 <aside class="notes">
-<p>Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility</p>
-Professionally, I work as a Planning &amp; Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com.
+<p>Good morning everyone, thank you all for comming. My name is Hussain Alsalman and I am here today to talk about enhancing your analysis work flow to make it more reproducible and shareable. I will be talking about what it means to have reproducible and shareable analysis then we will dive into why should we care about it. Later, I will walk you through # of steps to achieve reproducibility and shareability in R. At the end, I will attempt to do a live demonstrate how you can do your analysis and share it analysis all from one IDE.</p>
+<p>Professionally, I work as a Planning &amp; Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com.</p>
 </aside>
 </section>
 </section>
-<section id="what-is-reproducible-analysis" class="slide level2">
-<h2>What is Reproducible Analysis?</h2>
-</section>
-<section id="why-do-we-care" class="slide level2">
-<h2>Why do we care?</h2>
+<section id="little-story-first" class="slide level2">
+<h2>little story first</h2>
 <aside class="notes">
 <p>Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted.</p>
 <p>I am very passionate about data science so in 2016 I started writing blogs about data wrangling and data acquisition and basicaly share everything new I learn about this field. What I found that technical blogging is different than blogging about any other topics.</p>
@@ -575,26 +572,42 @@ Professionally, I work as a Planning &amp; Performance Management Analyst at Sau
 </section>
 <section id="section" class="slide level2" data-background-image="./images/broken_site.png" data-background-size="contain" data-background-repeat="no-repeat">
 <h2></h2>
+<aside>
+<p>So I tried to go back</p>
+</aside>
 </section>
-<section id="reproducibility-shareability-in-business" class="slide level2">
-<h2>Reproducibility &amp; Shareability in Business</h2>
+<section id="what-does-it-mean" class="slide level2">
+<h2>What does it mean?</h2>
+<p>Reproducible Analysis: </br><q>tying <span class="fragment highlight-red" data-fragment-index="1"> specific instructions</span> to data analysis and experimental data so that scholarship can be <span class="fragment highlight-red" data-fragment-index="2"> recreated </span>, <span class="fragment highlight-red" data-fragment-index="3"> better understood </span> and <span class="highlight-red fragment" data-fragment-index="4"> verified </span>&quot; </q></br></p>
+<p>Shareable Analysis:</p>
+</section>
+<section id="why-do-we-care" class="slide level2">
+<h2>Why do we care?</h2>
+<h3 id="reproducibility-shareability-in-business">Reproducibility &amp; Shareability in Business</h3>
 <ul>
 <li class="fragment">Reproducibility builds trust.</li>
 <li class="fragment">Foster Learning envirnoment</li>
 <li class="fragment">Faster to deploy</li>
 <li class="fragment"></li>
 </ul>
+<aside class="notes">
+</aside>
 </section>
 <section id="what-is-our-objective-today" class="slide level2">
 <h2>What is our objective today?</h2>
 <p>Making every step in this workflow reproducible and shareable</p>
-<div id="htmlwidget-d5086e2b06961931e044" style="width:768px;height:288px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d5086e2b06961931e044">{"x":{"diagram":"digraph neato {\n  graph [rankdir=LR,bgcolor=transparent,size=\"13,5\", fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];\n  edge [arrowsize=4 , arrowhead=vee, color = white];\n  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =white, color = white];\n  label=\"Reproducible + Shareable\";\n  subgraph cluster1 {\n  label=\"Data Analysis\";\n    subgraph cluster11 {\n    label=\"Exploration\";\n\n    c -> d -> e;\n    e -> c;\n    }\n    a -> b;\n    b -> c;\n  }\n\n  subgraph cluster2 {\n    label=\"Communicating Results\";\n    e -> f;\n  }\n\n  \n  a [ label = \"Data\nAcquisition\"  ]\n  b [ label = \"Data\nCleaning\" ]\n  c [ label = \"Transform\" ]\n  d [ label = \"Visualize\" ]\n  e [ label = \"Model\"  ]\n  f [ label = \"Analysis\nResults\" ]\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<p>Reproducible Analysis:</p>
+<div id="htmlwidget-3db0c79ebb373057d05c" style="width:768px;height:288px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3db0c79ebb373057d05c">{"x":{"diagram":"digraph neato {\n  graph [rankdir=LR,bgcolor=transparent,size=\"13,5\", fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];\n  edge [arrowsize=4 , arrowhead=vee, color = white];\n  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =white, color = white];\n  label=\"Reproducible + Shareable\";\n  subgraph cluster1 {\n  label=\"Data Analysis\";\n    subgraph cluster11 {\n    label=\"Exploration\";\n    c -> d -> e;\n    e -> c;\n    }\n    a -> b;\n    b -> c;\n  }\n  subgraph cluster2 {\n    label=\"Communicating Results\";\n    e -> f;\n  }\n  \n  a [ label = \"Data\nAcquisition\"  ]\n  b [ label = \"Data\nCleaning\" ]\n  c [ label = \"Transform\" ]\n  d [ label = \"Visualize\" ]\n  e [ label = \"Model\"  ]\n  f [ label = \"Analysis\nResults\" ]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<h3 id="steps-toward-this-objective">Steps toward this objective</h3>
+<ol type="1">
+<li>Re-create the scence</li>
+<li>Explain What exactly happened?</li>
+<li>Tracking any changes</li>
+<li>Share your findings</li>
+</ol>
 </section>
-<section id="what-is-sharepable" class="slide level2">
-<h2>What is Sharepable?</h2>
-<p>##Characteristics of Reproducible &amp; Shareable Analysis</p>
+<section id="characteristics-of-reproducible-shareable-analysis-workflow" class="slide level2">
+<h2>Characteristics of Reproducible &amp; Shareable Analysis workflow</h2>
 <ul>
 <li>Strong Documentation
 <ul>
@@ -621,15 +634,13 @@ Professionally, I work as a Planning &amp; Performance Management Analyst at Sau
 <li>Content fleixble</li>
 <li>Format flexible</li>
 </ul></li>
-<li>Focused == Automation
+<li>Focused - One Pleace</li>
+<li><p>Automated</p>
 <ul>
 <li>Netlify</li>
-<li>Hugo</li>
+<li>Hugo ## Tools to do</li>
 </ul></li>
 </ul>
-</section>
-<section id="tools-to-do" class="slide level2">
-<h2>Tools to do</h2>
 <p>1- Literate programming - Markdown - Python or R</p>
 <p>2- Envirnoment Control - Platform - Pakcage Dependencies</p>
 <ul>

@@ -8,6 +8,7 @@ output:
     css: "css/my_css.css"
     reveal_plugins: ["notes"]
     highlight: tango
+    smart: false
 ---
 
 
@@ -19,27 +20,25 @@ library("fontawesome")
 <section>
 
 </br><h1 class ='title'>Focused Workflow to Share Reproducible Analysis</h1>
-</br></br><h3  class= 'author'>`r fa("id-badge",fill = "white")`Hussain Alsalman</h3>
-<h5 class = 'subtitles'>`r fa("twitter",fill = "white")`@Arabian_Analyst</h5>
-<h5 class = 'subtitles'>`r fa("link",fill = "white")`https://ArabianAnalyst.com</h5>
-<h5 class = 'subtitles'>`r fa("calendar-day",fill = "white")``r Sys.Date()`</h5>
+</br></br><h3  class= 'author'>`r fa("id-badge",fill = "white")` Hussain Alsalman</h3>
+<h5 class = 'subtitles'>`r fa("twitter",fill = "white")` @Arabian_Analyst</h5>
+<h5 class = 'subtitles'>`r fa("link",fill = "white")` https://ArabianAnalyst.com</h5>
+<h5 class = 'subtitles'>`r fa("calendar-day",fill = "white")` `r Sys.Date()`</h5>
 </br>
 
 <aside class="notes">
-Good morning everyone, thank you all for comming. I am here today to talk to you about workflow in which you can easily share your analysis make it reproducible at . In the following slides I will be focusing of my talk will be focusing on shareability and reproducibility 
+Good morning everyone, thank you all for comming. My name is Hussain Alsalman and I am here today to talk about enhancing your analysis work flow to make it more reproducible and shareable. I will be talking about what it means to have reproducible and shareable analysis then we will dive into why should we care about it. Later, I will walk you through # of steps to achieve reproducibility and shareability in R. At the end, I will attempt to do a live demonstrate how you can do your analysis and share it analysis all from one IDE.  
 
-Professionally, I work as a Planning & Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com. 
+Professionally, I work as a Planning & Performance Management Analyst at Saudi Aramco. Outside working hours, I am a data science enthusiast and blogger, so if you recognize me it is probably from twitter because I am very active there or maybe you have read one of my blogs on ArabianAnalyst.com.
+ 
 </aside>
 
 </section>
 
-## What is Reproducible Analysis?
-
-
-
-## Why do we care? 
+## little story first 
 
 <aside class="notes">
+
 Before we talk about analysis shareability and reproducibility, I want to share with you a personal story that motivated this talk and the workflow I adopted. 
 
 I am very passionate about data science so in 2016 I started writing blogs about data wrangling and data acquisition and basicaly share everything new I learn about this field.  What I found that technical blogging is different than blogging about any other topics.
@@ -56,14 +55,50 @@ However, I manged to keep doing that for almost a year and half until that happe
 
 ## { data-background-image="./images/broken_site.png"  background-size="contain"  background-repeat="no-repeat"   }
 
-## Reproducibility & Shareability in Business 
+<aside>
 
+So I tried to go back 
+
+</aside>
+
+## What does it mean?
+
+Reproducible Analysis: 
+</br><q>tying 
+<span class="fragment highlight-red" data-fragment-index="1">
+specific instructions</span>
+to data analysis and experimental data so that scholarship can be
+<span class="fragment highlight-red" data-fragment-index="2">
+recreated
+</span>,
+<span class="fragment highlight-red" data-fragment-index="3">
+better understood
+</span>
+and 
+<span class="highlight-red fragment" data-fragment-index="4">
+verified
+</span>"
+</q></br>
+
+Shareable Analysis: 
+
+
+
+## Why do we care? 
+
+### Reproducibility & Shareability in Business 
 
 >   - Reproducibility builds trust. 
 >   - Foster Learning envirnoment 
 >   - Faster to deploy
 >   - 
-  
+
+<aside class="notes">
+
+
+
+</aside>
+
 
 ## What is our objective today?
 
@@ -80,19 +115,16 @@ DiagrammeR::grViz("digraph neato {
   label='Data Analysis';
     subgraph cluster11 {
     label='Exploration';
-
     c -> d -> e;
     e -> c;
     }
     a -> b;
     b -> c;
   }
-
   subgraph cluster2 {
     label='Communicating Results';
     e -> f;
   }
-
   
   a [ label = 'Data\nAcquisition'  ]
   b [ label = 'Data\nCleaning' ]
@@ -100,15 +132,19 @@ DiagrammeR::grViz("digraph neato {
   d [ label = 'Visualize' ]
   e [ label = 'Model'  ]
   f [ label = 'Analysis\nResults' ]
-
 }")
 ```
 
-Reproducible Analysis: 
+### Steps toward this objective
 
-## What is Sharepable?
+1. Re-create the scence 
+2. Explain What exactly happened?
+3. Tracking any changes 
+4. Share your findings 
 
-##Characteristics of Reproducible & Shareable Analysis 
+
+## Characteristics of Reproducible & Shareable Analysis workflow 
+
 
 - Strong Documentation
   - How? Why? 
@@ -116,7 +152,7 @@ Reproducible Analysis:
 - Always Replicable
   - Same packages and all dependencies 
     - For python when in doubt use conda install instead of pip install
-    
+
   - Same environment
     - R & Python
   
@@ -128,11 +164,11 @@ Reproducible Analysis:
   - Content fleixble 
   - Format flexible
 
-- Focused == Automation
+- Focused - One Pleace
+- Automated
+  
   - Netlify
   - Hugo
-  
-
 ## Tools to do
 
 1- Literate programming 
