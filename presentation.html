@@ -10,68 +10,6 @@
   <link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="presentation_files/reveal.js-3.3.0.1/css/theme/black.css" id="theme">
 
@@ -550,7 +488,7 @@ Hussain Alsalman
 <svg style="height:0.8em;top:.04em;position:relative;fill:white;" viewBox="0 0 448 512">
 <path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm64-192c0-8.8 7.2-16 16-16h96c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-96zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"/>
 </svg>
-2020-03-09
+2020-03-11
 </h5>
 <p></br></p>
 <aside class="notes">
@@ -585,71 +523,52 @@ Hussain Alsalman
 <h2>Why do we care?</h2>
 <h3 id="reproducibility-shareability-in-business">Reproducibility &amp; Shareability in Business</h3>
 <ul>
+<li class="fragment">Tremendous effeciency.</li>
 <li class="fragment">Reproducibility builds trust.</li>
 <li class="fragment">Foster Learning envirnoment</li>
 <li class="fragment">Faster to deploy</li>
-<li class="fragment"></li>
 </ul>
 <aside class="notes">
+<b>Tremendous effeciency.</b></br>
+<p>
+<p>More often than not, you will face simillar requirements in business. Having many problems are in fact similar</p>
+</p>
+</br> <b>Reproducibility builds trust.</b></br>
+<p>
+</p>
+</br> <b>Foster Learning envirnoment</b> </br>
+<p>
+</p>
+</br> <b>Faster to deploy</b></br>
+<p>
+</p>
+<p></br></p>
 </aside>
 </section>
 <section id="what-is-our-objective-today" class="slide level2">
 <h2>What is our objective today?</h2>
 <p>Making every step in this workflow reproducible and shareable</p>
-<div id="htmlwidget-3db0c79ebb373057d05c" style="width:768px;height:288px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3db0c79ebb373057d05c">{"x":{"diagram":"digraph neato {\n  graph [rankdir=LR,bgcolor=transparent,size=\"13,5\", fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];\n  edge [arrowsize=4 , arrowhead=vee, color = white];\n  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =white, color = white];\n  label=\"Reproducible + Shareable\";\n  subgraph cluster1 {\n  label=\"Data Analysis\";\n    subgraph cluster11 {\n    label=\"Exploration\";\n    c -> d -> e;\n    e -> c;\n    }\n    a -> b;\n    b -> c;\n  }\n  subgraph cluster2 {\n    label=\"Communicating Results\";\n    e -> f;\n  }\n  \n  a [ label = \"Data\nAcquisition\"  ]\n  b [ label = \"Data\nCleaning\" ]\n  c [ label = \"Transform\" ]\n  d [ label = \"Visualize\" ]\n  e [ label = \"Model\"  ]\n  f [ label = \"Analysis\nResults\" ]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-<h3 id="steps-toward-this-objective">Steps toward this objective</h3>
+<div id="htmlwidget-1a1358d5bfc50263b42b" style="width:768px;height:288px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1a1358d5bfc50263b42b">{"x":{"diagram":"digraph neato {\n  graph [rankdir=LR,bgcolor=transparent,size=\"13,5\", fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];\n  edge [arrowsize=4 , arrowhead=vee, color = white];\n  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =black, color = white,style=filled];\n  label=\"Reproducible + Shareable\";\n  subgraph cluster1 {\n  label=\"Data Analysis\";\n    subgraph cluster11 {\n    label=\"Exploration\";\n    c -> d -> e;\n    e -> c;\n    }\n    a -> b;\n    b -> c;\n  }\n  subgraph cluster2 {\n    label=\"Communicating Results\";\n    e -> f;\n  }\n  a [ label = \"Data\nAcquisition\"  ]\n  b [ label = \"Data\nCleaning\" ]\n  c [ label = \"Transform\" ]\n  d [ label = \"Visualize\" ]\n  e [ label = \"Model\"  ]\n  f [ label = \"Analysis\nResults\" ]\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</section>
+<section id="steps-toward-reproducibility" class="slide level2">
+<h2>Steps toward Reproducibility</h2>
+<p>Before you close any project, take a look it as a detective.</p>
 <ol type="1">
 <li>Re-create the scence</li>
-<li>Explain What exactly happened?</li>
-<li>Tracking any changes</li>
+<li>Explain what exactly happened?</li>
+<li>Spare no details</li>
 <li>Share your findings</li>
 </ol>
 </section>
+<section id="re-creating-the-seen" class="slide level2">
+<h2>1. Re-creating the seen</h2>
+<p>There is a spectrum of</p>
+</section>
 <section id="characteristics-of-reproducible-shareable-analysis-workflow" class="slide level2">
 <h2>Characteristics of Reproducible &amp; Shareable Analysis workflow</h2>
-<ul>
-<li>Strong Documentation
-<ul>
-<li>How? Why?</li>
-</ul></li>
-<li>Always Replicable
-<ul>
-<li>Same packages and all dependencies
-<ul>
-<li>For python when in doubt use conda install instead of pip install</li>
-</ul></li>
-<li>Same environment
-<ul>
-<li>R &amp; Python</li>
-</ul></li>
-</ul></li>
-<li>Capture Changes
-<ul>
-<li>Every step along the way.</li>
-<li>Change of approach</li>
-</ul></li>
-<li>Shareable
-<ul>
-<li>Content fleixble</li>
-<li>Format flexible</li>
-</ul></li>
-<li>Focused - One Pleace</li>
-<li><p>Automated</p>
-<ul>
-<li>Netlify</li>
-<li>Hugo ## Tools to do</li>
-</ul></li>
-</ul>
-<p>1- Literate programming - Markdown - Python or R</p>
-<p>2- Envirnoment Control - Platform - Pakcage Dependencies</p>
-<ul>
-<li>Checkpoint package by Microsoft for R</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(<span class="st">&quot;checkpoint&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">checkpoint</span>(<span class="st">&quot;YYYY-MM-DD&quot;</span>) <span class="co"># e.g. &quot;2014-09-17&quot;</span></a></code></pre></div>
 </section>
-<section class="slide level2">
+<section><section id="section-1" class="title-slide slide level1"><h1></h1></section><section class="slide level2">
 
 <p>Date of snapshot to use in YYYY-MM-DD format, e.g. “2014-09-17”. Specify a date on or after “2014-09-17”. MRAN takes one snapshot per day. To list all valid snapshot dates on MRAN use getValidSnapshots()</p>
 <ul>
@@ -658,7 +577,7 @@ Hussain Alsalman
 <p>2- Version Control - Git</p>
 <p>3- Hosting Envirnoment - Github - Website Generator by Hugo</p>
 <p>4- Continous Deployment - Netlify</p>
-</section>
+</section></section>
 <section><section id="demo" class="title-slide slide level1"><h1>Demo</h1></section><section id="data-aquisiton" class="slide level2">
 <h2>Data Aquisiton</h2>
 <p>best practices - Avoid downloading the data manually. You will almost definetly forget where you got it from and why? - Also document why you choose the data you chose</p>

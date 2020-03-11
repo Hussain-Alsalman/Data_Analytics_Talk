@@ -11,10 +11,10 @@ output:
     smart: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library("fontawesome")
+library("DiagrammeR")
 ```
 
 <section>
@@ -88,14 +88,32 @@ Shareable Analysis:
 
 ### Reproducibility & Shareability in Business 
 
+>   - Tremendous effeciency.
 >   - Reproducibility builds trust. 
 >   - Foster Learning envirnoment 
 >   - Faster to deploy
->   - 
+
 
 <aside class="notes">
+<b>Tremendous effeciency.</b></br>
+<p>
+More often than not, you will face simillar requirements in business. Having  many problems are in fact similar  
 
 
+</p></br>
+<b>Reproducibility builds trust.</b></br>
+<p>
+
+
+</p></br>
+<b>Foster Learning envirnoment</b> </br>
+<p>
+
+</p></br>
+<b>Faster to deploy</b></br>
+<p>
+
+</p></br>
 
 </aside>
 
@@ -105,11 +123,10 @@ Shareable Analysis:
 Making every step in this workflow reproducible and shareable 
 
 ```{r DiagrammR, echo=FALSE,message=FALSE, warnings=FALSE, fig.height=3}
-library("DiagrammeR")
 DiagrammeR::grViz("digraph neato {
   graph [rankdir=LR,bgcolor=transparent,size='13,5', fontsize = 32, fontname = Helvetica, overlap = false, fontcolor =white, color = white];
   edge [arrowsize=4 , arrowhead=vee, color = white];
-  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =white, color = white];
+  node [shape=circle, fontsize = 32, fontname = Helvetica ,fontcolor =black, color = white,style=filled];
   label='Reproducible + Shareable';
   subgraph cluster1 {
   label='Data Analysis';
@@ -125,7 +142,6 @@ DiagrammeR::grViz("digraph neato {
     label='Communicating Results';
     e -> f;
   }
-  
   a [ label = 'Data\nAcquisition'  ]
   b [ label = 'Data\nCleaning' ]
   c [ label = 'Transform' ]
@@ -135,16 +151,28 @@ DiagrammeR::grViz("digraph neato {
 }")
 ```
 
-### Steps toward this objective
+## Steps toward Reproducibility 
+
+Before you close any project, take a look it as a detective.
 
 1. Re-create the scence 
-2. Explain What exactly happened?
-3. Tracking any changes 
+2. Explain what exactly happened?
+3. Spare no details 
 4. Share your findings 
+
+
+## 1. Re-creating the seen
+
+There is a spectrum of 
+
+```{r}
+
+```
 
 
 ## Characteristics of Reproducible & Shareable Analysis workflow 
 
+#
 
 - Strong Documentation
   - How? Why? 
